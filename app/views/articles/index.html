@@ -1,6 +1,8 @@
-<h1>Megatrone welcomes you, my master! Here is a list of all your articles, captain!</h1>
-<%= link_to 'New article', new_article_path %>
-<table>
+<%= link_to 'New article', new_article_path, class: 'btn btn-default' %>
+<%= link_to 'Back', root_path, class: 'btn btn-default pull-right' %>
+<hr>
+
+<table class="table table-striped">
   <tr>
     <th>Title</th>
     <th>Text</th>
@@ -11,9 +13,9 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
+      <td><%= link_to 'Show', article_path(article), class: "btn btn-info" %></td>
+      <td><%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Destroy', article_path(article), class: "btn btn-danger",
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
